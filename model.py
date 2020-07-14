@@ -84,7 +84,7 @@ def train(train_dataset_path=None, test_dataset_path=None, batch_size=16, learni
                 metrics=['accuracy'])
 
     # start learn
-    history = model.fit(
+    history = model.fit_generator(
         train_data_gen,
         steps_per_epoch=train_len,
         epochs=epochs,
