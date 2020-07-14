@@ -16,10 +16,7 @@ def read_image(filename, shape):
     image = expand_dims(image, 0)
     return image
 
-train(train_dataset_path='/dataset/train', test_dataset_path='/dataset/test', learning_rate=0.0005, epochs=10)
+train(train_dataset_path=os.path.abspath('dataset/train'), test_dataset_path=os.path.abspath('dataset/test'), learning_rate=0.0005, epochs=10)
 
 model = get_model()
 model.load_weights('model.h5')
-
-x = model.predict(read_image('validation/damage_screen.jpg', (150, 150)))
-print('damaged' if x[0][0] < 0.5 else 'not damaged', 'accuracy: {0}'.format(x[0][0]))

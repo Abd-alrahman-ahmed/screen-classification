@@ -31,7 +31,7 @@ def show_plots(history, epochs):
     plt.show()
 
 
-def get_model(shape=(150, 150), learning_rate=0.001):
+def get_model(shape=(200, 200), learning_rate=0.001):
     model = Sequential([
         # convolutional layer
         Conv2D(32, (3, 3), input_shape=(shape[0], shape[1], 3), activation='relu'),
@@ -50,7 +50,7 @@ def get_model(shape=(150, 150), learning_rate=0.001):
     return model
     
 
-def train(train_dataset_path=None, test_dataset_path=None, batch_size=16, learning_rate=0.001, momentum=0.9, epochs=3, shape=(150, 150)):
+def train(train_dataset_path=None, test_dataset_path=None, batch_size=16, learning_rate=0.001, epochs=3, shape=(200, 200)):
     # chekc dataset paths
     if train_dataset_path == None or test_dataset_path == None:
         raise ValueError()
